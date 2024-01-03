@@ -1,0 +1,93 @@
+<div class="page-wrapper">
+<div class="card accordion-body">
+<div class="content container-fluid">
+ <div class="page-header">
+ <div class="row align-items-center">
+<div class="col">
+<h3 class="page-title mt-5">Edit Room</h3>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12">
+<form [formGroup]="editRoomForm" (ngSubmit)="saveEditRoom()">
+<div class="row formtype">
+<div class="col-md-4">
+<div class="form-group">
+<label>Room Type Id</label>
+
+<input class="form-control" type="text" id="room_type_id" name="room_type_id"
+ formControlName="room_type_id" [ngClass]="{'is-invalid' :submitted && f.room_type_id.errors}">
+<div *ngIf="submitted &&  f.room_type_id.errors" class="invalid-feedback ">Please
+Enter Room Type Id.</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="form-group">
+<label>ROom No</label>
+
+<input class="form-control" type="text" id="room_no" name="room_no"
+formControlName="room_no" [ngClass]="{'is-invalid' :submitted && f.room_no.errors}">
+<div *ngIf="submitted &&  f.room_no.errors" class="invalid-feedback ">Please
+ Enter ROom No.</div>
+</div> </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Status</label>
+
+                                    <input class="form-control" type="text" id="status" name="status"
+                                        formControlName="status"
+                                        [ngClass]="{'is-invalid' :submitted && f.status.errors}">
+                                    <div *ngIf="submitted &&  f.status.errors" class="invalid-feedback ">Please
+                                        Enter Status.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>branch_id</label>
+
+                                    <input class="form-control" type="text" id="branch_id" name="branch_id"
+                                        formControlName="branch_id"
+                                        [ngClass]="{'is-invalid' :submitted && f.branch_id.errors}">
+                                    <div *ngIf="submitted &&  f.branch_id.errors" class="invalid-feedback ">Please
+                                        Enter branch_id.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>created_by</label>
+
+                                    <input class="form-control" type="text" id="created_by" name="created_by"
+                                        formControlName="created_by"
+                                        [ngClass]="{'is-invalid' :submitted && f.created_by.errors}">
+                                    <div *ngIf="submitted &&  f.created_by.errors" class="invalid-feedback ">Please
+                                        Enter created_by.</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>updated by</label>
+
+                                    <input class="form-control" type="text" id="updated_by" name="updated_by"
+                                        formControlName="updated_by"
+                                        [ngClass]="{'is-invalid' :submitted && f.updated_by.errors}">
+                                    <div *ngIf="submitted &&  f.updated_by.errors" class="invalid-feedback ">Please
+                                        Enter updated_by.</div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <button type="submit" class="btn btn-primary buttonedit ml-2 mb-5"
+                            (click)="saveEditRoom()">Save</button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

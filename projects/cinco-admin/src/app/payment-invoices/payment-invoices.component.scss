@@ -1,0 +1,22 @@
+.btn-success {
+    color: #fff;
+     background-color: #fea116; 
+     border-color: #fea116; 
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #fea116;
+    border-color: #fea116;
+}
+
+::ng-deep .theme-green .bs-datepicker-body table td.week span {
+    color: #fea116;
+}
+
+::ng-deep .theme-green .bs-datepicker-head {
+ background-color: #fea116;
+}
+::ng-deep .theme-green .bs-datepicker-body table td span.selected{
+  background-color: #fea116;
+}

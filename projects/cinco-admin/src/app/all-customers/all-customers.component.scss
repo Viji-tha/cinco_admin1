@@ -1,0 +1,39 @@
+
+.btn-primary {
+    color: #fff;
+    background-color: #fea116;
+    border-color:#fea116;
+}
+.btn{
+    padding:16px,62px;
+    width: 200px;
+    border-radius: 22px;
+  }
+.card-table .table td  {
+    border-top: 1px solid #e2e5e8;
+    padding: 1rem 0.75rem;
+    white-space: nowrap;
+}
+// .table.table-center td{
+//     vertical-align: middle;
+// }
+
+.table {
+    font-size: 14px;
+}body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 30px;
+  }
+//   .container{
+//     position: relative;
+//     max-width: 850px;
+//     width: 100%;
+//     background: #fff;
+//     padding: 40px 30px;
+//     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+//     perspective: 2700px;
+//   }

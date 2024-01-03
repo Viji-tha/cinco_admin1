@@ -1,0 +1,47 @@
+<!-- <div class="main-wrapper login-body">
+    <div class="login-wrapper">
+        <div class="container">
+            <div class="loginbox">
+                <div class="login-left"> <img class="img-fluid" style="height: 200px; width: 250px;"     src="assets/img/thecinco.png" alt="Logo"> </div>
+                    
+                <div class="login-right">
+                    <div class="login-right-wrap">
+                        <h1>Login</h1>
+                        <p class="account-subtitle">Access to our dashboard</p>
+                        <form action="index.html" [formGroup]="empLoginForm" (ngSubmit)="saveNewMember()">
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="User id" id="id" name="id" formControlName="id"
+                                [ngClass]="{ 'is-invalid': submitted && f.id.errors }">
+                                <div *ngIf="submitted && f.id.errors" class="invalid-feedback" > Plaese Enter your user id</div> </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="user name" id="name" name="name" formControlName="name"
+                                [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                                <div *ngIf="submitted && f.name.errors" class="invalid-feedback" > Plaese Enter your user name </div> </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Password" id="password" name="password" formControlName="password"
+                                [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback" > Plaese Enter your Password </div> </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-block" type="submit">Login</button>
+                            </div>
+                        </form>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<h1>Dynamic Checkbox List Example</h1>
+<ul>
+  <li *ngFor="let role of roles">
+    <input type="checkbox" [(ngModel)]="role.checked" />
+    <label>{{role.name}}</label>
+  </li>
+</ul>
+
+And the selected Object is
+
+<pre>{{this.selectedCheckboxList | json}}</pre>

@@ -1,0 +1,222 @@
+<p>create-invoice works!</p>
+<div class="page-wrapper"><div class="card accordion-body" style="width: 850px ; text-align: center; margin-left: 100px;">    <div class="content mt-5">
+    <div class="row mt-5">
+    <div class="col-sm-12">
+    <h4 class="page-title">Create Invoice</h4>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-12">
+    <form [formGroup]="createInvoiceForm" (ngSubmit)="saveCreateInvoice()">
+    <div class="row mt-5">
+    <div class="col-md-3">
+    <div class="form-group">
+        <label>Name</label>
+        <select class="form-control form-control-lg" id="name" name="name" formControlName="name"
+        [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+            <option>Kennadey</option>
+            <option>Jennifer Robinson</option>
+            <option>Terry Baker</option>
+        </select>
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback ">
+            Please select Name.
+         </div>
+    </div>
+    </div>
+    <div class="col-md-3">
+    <div class="form-group">
+    <label>Room Type</label>
+    <select class="form-control form-control-lg" id="name" name="name" formControlName="name"
+    [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+    <!-- <option>Select</option> -->
+    <option>Single</option>
+    <option>Double</option>
+    <option>Quad</option>
+    <option>King</option>
+    <option>Suite</option>
+    <option>Villa</option>
+    </select>
+    <div *ngIf="submitted && f.roomtype.errors" class="invalid-feedback ">
+            Please select Name.
+         </div>
+    </div>
+    </div>
+    <div class="col-md-3">
+    <div class="form-group">
+    <label>Email</label>
+    <input class="form-control form-control-lg" id="email" name="email" formControlName="email"
+    [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+    <div *ngIf="submitted && f.email.errors" class="invalid-feedback ">
+        Please select Name.
+     </div>
+    </div>
+    </div>
+    <div class="col-md-3">
+    <div class="form-group">
+        <label>AC/NON-AC</label>
+        <select class="form-control form-control-lg" id="type_room" name="type_room" formControlName="type_room"
+        [ngClass]="{'is-invalid' : submitted && f.type_room.errors}">
+            
+            <option>AC</option>
+            <option>NON-AC</option>
+        </select>
+        
+        <div *ngIf="submitted && f.type_room.errors" class="invalid-feedback">Plaese select Room Type</div>
+    </div>
+    </div>
+    <div class="col-md-3">
+    <div class="form-group">
+    <label>Customer Address</label>
+    <textarea class="form-control" rows="3" id="c_address" name="c_address" formControlName="c_address"
+    [ngClass]="{'is-invalid' : submitted && f.c_address.errors}"></textarea>
+    </div>
+    </div>
+    <div class="col-md-3">
+    <div class="form-group">
+    <label>Billing Address</label>
+    <textarea class="form-control" rows="3" id="b_address" name="b_address" formControlName="b_address"
+    [ngClass]="{'is-invalid' : submitted && f.b_address.errors}"></textarea>
+    </div>
+    </div>
+    <div class="col-md-3">
+    <div class="form-group">
+    <label>Invoice date <span class="text-danger">*</span></label>
+    <div class="cal-icon">
+    <input class="form-control datetimepicker" autocomplete="off" class="text" placeholder="date" id="i_date" name="i_date" formControlName="i_date" 
+    bsDatepicker [maxDate]="maxDate" [bsConfig]="{isAnimated:true}"
+[ngClass]="{'is-invalid' : submitted && f.i_date.errors}" >
+<div *ngIf="submitted && f.i_date.errors" class="invalid-feedback">Plaese select Invoice Date</div>
+    </div>
+    </div>
+    </div>
+    <div class="col-md-3">
+    <div class="form-group">
+    <label>Due Date <span class="text-danger">*</span></label>
+    <div class="cal-icon">
+    <input class="form-control datetimepicker" autocomplete="off" class="text" placeholder="datepicker" id="d_date" name="d_date" formControlName="d_date" 
+    bsDatepicker [maxDate]="maxDate" [bsConfig]="{isAnimated:true}"
+[ngClass]="{'is-invalid' : submitted && f.d_date.errors}" >
+<div *ngIf="submitted && f.d_date.errors" class="invalid-feedback">Plaese select Due Date</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-12 col-sm-12">
+    <div class="table-responsive">
+    <table class="table table-hover table-white">
+    <thead>
+    <tr>
+    <th style="width: 20px">#</th>
+    <th class="col-sm-2">Item</th>
+    <th class="col-md-6">Description</th>
+    <th style="width:100px;">Unit Cost</th>
+    <th style="width:80px;">Qty</th>
+    <th>Amount</th>
+    <th> </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>
+    <input class="form-control" type="text" style="min-width:150px">
+    </td>
+    <td>
+    <input class="form-control" type="text" style="min-width:150px">
+    </td>
+    <td>
+    <input class="form-control" style="width:100px" type="text">
+    </td>
+    <td>
+    <input class="form-control" style="width:80px" type="text">
+    </td>
+    <td>
+    <input class="form-control" readonly="" style="width:120px" type="text">
+    </td>
+    <td><a href="javascript:void(0)" class="text-success font-18" title="Add"><i class="fas fa-plus"></i></a></td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>
+    <input class="form-control" type="text" style="min-width:150px">
+    </td>
+    <td>
+    <input class="form-control" type="text" style="min-width:150px">
+    </td>
+    <td>
+    <input class="form-control" style="width:100px" type="text">
+    </td>
+    <td>
+    <input class="form-control" style="width:80px" type="text">
+    </td>
+    <td>
+    <input class="form-control" readonly="" style="width:120px" type="text">
+    </td>
+    <td><a href="javascript:void(0)" class="text-danger font-18" title="Remove"><i class="fas fa-trash-alt"></i></a></td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    <div class="table-responsive">
+    <table class="table table-hover table-white">
+    <tbody>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="text-right">Total</td>
+    <td style="text-align: right; padding-right: 30px;width: 230px">0
+    </td>
+    </tr>
+    <tr>
+    <td colspan="5" class="text-right">Tax</td>
+    <td style="text-align: right; padding-right: 30px;width: 230px">
+    <input class="form-control text-right form-amt" value="0" readonly="" type="text" id="tax" name="tax" formControlName="tax" 
+    [ngClass]="{ 'is-invalid':submitted && f.tax.errors?.required}"> 
+                                
+    <div *ngIf="submitted && f.tax.errors" class="invalid-feedback">Plaese Enter Tax Amount</div>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="5" class="text-right">
+    Discount %
+    </td>
+    <td style="text-align: right; padding-right: 30px;width: 230px">
+    <input class="form-control text-right" type="text" id="discount" name="discount" formControlName="discount" 
+    [ngClass]="{ 'is-invalid':submitted && f.discount.errors?.required}"> 
+                                
+    <div *ngIf="submitted && f.discount.errors" class="invalid-feedback">Plaese Enter Discount Amount</div>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="5" style="text-align: right; font-weight: bold">
+    Grand Total
+    </td>
+    <td style="text-align: right; padding-right: 30px; font-weight: bold; font-size: 16px;width: 230px">
+    $ 0.00
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+    <div class="form-group">
+    <label>Other Information</label>
+    <textarea class="form-control" id="text" name="text" formControlName="text"
+     [ngClass]="{ 'is-invalid':submitted && f.text.errors?.required}"> 
+                                
+        <div *ngIf="submitted && f.text.errors" class="invalid-feedback">Plaese Provide Your Comments.</div></textarea>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <button type="submit" class="btn btn-primary buttonedit">Save</button>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div></div>

@@ -1,0 +1,30 @@
+.btn-primary{
+    color:#ffff;
+    background-color: #FEA116;
+    border-color: #FEA116;
+  
+    border-radius: 22px;
+}
+.btn{
+  padding:16px,62px;
+  width: 240px;
+}
+
+
+.row {
+        margin-left: 0px;
+}
+// .user-menu{
+//     body-color: Black;
+// }
+
+::ng-deep .theme-green .bs-datepicker-body table td.week span {
+    color: #fea116;
+}
+
+::ng-deep .theme-green .bs-datepicker-head {
+ background-color: #fea116;
+}
+::ng-deep .theme-green .bs-datepicker-body table td span.selected{
+  background-color: #fea116;
+}

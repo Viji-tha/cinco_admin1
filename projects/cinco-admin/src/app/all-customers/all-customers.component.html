@@ -1,0 +1,75 @@
+<div class="page-wrapper">
+  <div class="content container-fluid px-0">
+    <div class="page-header">
+      <div class="row align-items-center">
+        <div class="col">
+          <div class="mt-5">
+            <h4 class="card-title float-left mt-2 ml-3">Customers</h4> <a  class="btn btn-primary float-right veiwbutton" routerLink="/add-customer">Add Customers</a> </div>
+        </div>
+      </div>
+    </div>
+
+ <!-- <div class="container"> -->
+  <div class="card py-md-2">
+  <div class="row">
+    <div class="col-md-3">
+      <input type="text" placeholder="Filter" class="form-control" #filterInput (input)="filterTable(filterInput.value)">
+    </div>
+    
+    
+  </div>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th (click)="sortTable('booking_id')">BookingId</th>
+        <th (click)="sortTable('name')">Name</th>
+        <th (click)="sortTable('roomtype')">RoomType</th>
+        <th (click)="sortTable('totalnos')">TotalRooms</th>
+        <th (click)="sortTable('bookdate')">Booking Date</th>
+        
+        <th (click)="sortTable('indate')">Check-In Date</th>
+        <th (click)="sortTable('outdate')">Check-Out Date</th>
+        <th (click)="sortTable('email')">Email</th>
+        <th (click)="sortTable('phno')">PhNumber</th>
+        <th (click)="sortTable('phno')">IdProof Number</th>
+        <th (click)="sortTable('status')">Status</th>
+        <!-- <th (click)="sortTable('actions')">Actions</th> -->
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of getPaginatedData()">
+        <td>{{ row.booking_id }}</td>
+        <td>{{ row.name }}</td>
+        <td>{{ row.roomtype }}</td>
+        <td>{{row.totalnos  }}</td>
+        <td>{{ row.bookdate }}</td>
+        <td>{{ row.indate }}</td>
+        <td>{{ row.outdate }}</td>
+        <td>{{ row.email }}</td>
+        <td>{{ row.phno }}</td>
+        <td>{{ row.idproof }}</td>
+        <td>{{ row.status }}</td>
+        <!-- <td>{{row.action}}</td> -->
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="row">
+    <div class="col-md-12" style="text-align-last: right;">
+      <div class="pagination">
+        <button class="btn1 btn-link" [disabled]="currentPage === 1" (click)="setPage(currentPage - 1)"><span aria-hidden="true">&laquo;</span></button>
+        <span>{{ currentPage }}</span>
+        <button class="btn1 btn-link" [disabled]="currentPage === getTotalPages()" (click)="setPage(currentPage + 1)"><span aria-hidden="true">&raquo;</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+
+
+
+
+
+

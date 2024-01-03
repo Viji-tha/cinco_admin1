@@ -1,0 +1,93 @@
+<div class="page-wrapper">
+  <div class="content container-fluid px-0">
+    <div class="page-header">
+      <div class="row align-items-center">
+        <div class="col">
+          <div class="mt-5">
+            <h4 class="card-title float-left ml-3 mt-2">All Rooms</h4> <a class="btn btn-primary float-right veiwbutton"
+              routerLink="/add-rooms">Add Rooms</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="container"> -->
+    <div class="card py-md-2">
+      <div class="row">
+        <div class="col-md-3">
+          <input type="text" placeholder="Filter" class="form-control" #filterInput
+            (input)="filterTable(filterInput.value)">
+        </div>
+
+      </div>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th (click)="sortRooms('room_no')">Room No</th>
+
+            <th (click)="sortRooms('branch_id')">Branch Id</th>
+            <th (click)="sortRooms('room_type_id')">Room Type</th>
+            <th (click)="sortRooms('status')">Status</th>
+
+            <th (click)="sortRooms('name')">Actions</th>
+            <!-- <th  (click)="sortTable('indate')">Check-In Date</th> -->
+            <!-- <th  (click)="sortTable('outdate')">Check-Out Date</th> -->
+            <!-- <th  (click)="sortTable('email')">Email</th> -->
+            <!-- <th  (click)="sortTable('phno')">PhNumber</th>        -->
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of rooms">
+            <td>{{ row.room_no }}</td>
+
+
+            <td>{{ row.branch_id }}</td>
+            <td>{{ row.room_type_id }}</td>
+
+            <td>{{ row.status }}</td>
+            <td><div class="d-flex"> <i class="fa fa-pencil-square-o" aria-hidden="true" [routerLink]="['/edit-rooms',row._id]"><button class="btn " type="button" data-toggle="tooltip"
+              title="Edit"></button></i>
+              <i class="fa fa-trash" aria-hidden="true">
+          <button class="btn " type="button" data-toggle="tooltip"
+             title="Delete"></button></i>
+            </div>
+          </td>
+            <!-- <td *ngIf="row.status=='occupied'" style="color: green;">{{row.status}}
+
+
+            </td>
+            <td *ngIf="row.status=='vacant'" style="color: red;">{{row.status}}
+
+
+            </td>
+            <td *ngIf="row.status=='reserved'" style="color: orange;">{{row.status}}
+
+
+            </td> -->
+            <!-- <td *ngIf="!customer_details && row.status =='occupied' || row.status =='reserved'" >{{ row.name }}</td> -->
+            <!-- <td *ngIf="!customer_details && row.status =='occupied' || row.status == 'reserved'">{{ row.indate }}</td> -->
+            <!-- <td *ngIf="!customer_details && row.status =='occupied' || row.status == 'reserved'">{{ row.outdate }}</td> -->
+            <!-- <td *ngIf="!customer_details && row.status =='occupied' || row.status == 'reserved'">{{ row.email }}</td> -->
+            <!-- <td *ngIf="!customer_details && row.status =='occupied' || row.status == 'reserved'">{{ row.phno }}</td> -->
+
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="row"  >
+        <div class="col-md-12" style="text-align-last: right;">
+          <div class="pagination">
+            <button class="btn1 btn-link" [disabled]="currentPage === 1"
+              (click)="setPage(currentPage - 1)">&laquo;</button>
+            <span>{{ currentPage }}</span>
+            <button class="btn1 btn-link" [disabled]="currentPage === getTotalPages()"
+              (click)="setPage(currentPage + 1)">&raquo;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->

@@ -1,0 +1,150 @@
+ 
+<body>
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <img src="assets/img/product/deluxe.png" alt="">
+        <div class="text">
+       
+        </div>
+      </div>
+      <div class="back">
+        <img class="backImg" src="assets/img/product/deluxe.png" style="height:100px;" alt="">
+        <div class="text">
+          <span class="text-1">Complete miles of journey <br> with one step</span>
+          <span class="text-2">Let's get started</span>
+        </div>
+      </div>
+    </div>
+    <div class="forms">
+      <div class="form-content">
+
+
+
+        <div class="login-form">
+          <div class="title">Login</div>
+          <div class="input-box">
+            <label>
+              Admin
+              <input type="checkbox" formControlName="isAdmin" id="isAdmin" style="width:15% ;height:50%" class="form-check-input" (change)="toggleAdminLogin()">
+            </label>               
+          </div>
+          <div *ngIf="isAdmin; else employeeLogin">
+          <form action="#" method="post" class="needs-validation" [formGroup]=" loginForm" (ngSubmit)="saveNewMember()">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="bi bi-envelope-fill"></i>
+                <input type="text" placeholder="Enter your user name" required name="email"
+                  formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                <span class="invalid-feedback">email is required</span>
+              </div>
+              <div class="input-box">
+                <i class="bi bi-lock-fill"></i>
+                <input type="password" placeholder="Enter your password" required name="password" autocomplete="off"
+                  formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                <div class="invalid-feedback">Please Enter your password.</div>
+              </div>                                 
+              <div class="text"><a routerLink="/forgot-password">Forgot password?</a></div>
+              <div class="button input-box">
+                <input type="submit" value="Submit">
+              </div>
+              <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+            </div>            
+          </form>
+          </div>
+
+
+          <ng-template #employeeLogin>
+            <!-- Employee login text or elements -->
+            <form action="#" method="post" class="needs-validation" [formGroup]=" loginForm" (ngSubmit)="saveNewMember()">
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="bi bi-envelope-fill"></i>
+                  <input type="text" placeholder="Enter your user name" required name="email"
+                    formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                  <span class="invalid-feedback">email is required</span>
+                </div>
+                <div class="input-box">
+                  <i class="bi bi-lock-fill"></i>
+                  <input type="password" placeholder="Enter your password" required name="password" autocomplete="off"
+                    formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                  <div class="invalid-feedback">Please Enter your password.</div>
+                </div>
+                
+          
+               
+                <div class="text"><a routerLink="/forgot-password">Forgot password?</a></div>
+                <div class="button input-box">
+                  <input type="submit" value="Submit">
+                </div>
+                <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+              </div>
+            </form>
+            <p>Login as employee</p>
+          </ng-template>
+          
+        </div>
+
+
+
+        <div class="signup-form">
+          <div class="title">Signup</div>
+          <form action="#" method="post" class="needs-validation" [formGroup]="signUpForm" (ngSubmit)="saveNewPerson()">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="bi bi-person-fill"></i>
+                <input type="text" placeholder="Enter your name" required class="form-control" id="f_name" name="f_name"
+                  formControlName="f_name" [ngClass]="{ 'is-invalid': submitted && f1.f_name.errors }">
+                <div *ngIf="submitted && f1.f_name.errors" class="invalid-feedback tag_">
+                  Please provide First Name.
+                </div>
+              </div>
+              <div class="input-box">
+                <i class="bi bi-envelope-fill"></i>
+                <input type="text" placeholder="Enter your email" class="form-control" name="f_email"
+                  formControlName="f_email" [ngClass]="{ 'is-invalid': submitted && f1.f_email.errors }">
+                <div *ngIf="submitted && f1.f_email.errors" class="invalid-feedback tag_">
+                  Email is required
+
+                </div>
+              </div>
+
+              <div class="input-box">
+                <i class="bi bi-lock-fill"></i>
+                <input type="password" placeholder="Enter your password" name="f_password" formControlName="f_password" autocomplete="off"
+                  [ngClass]="{ 'is-invalid': submitted && f1.f_password.errors }"><br><br>
+                <div *ngIf="submitted && f1.f_password.errors" class="invalid-feedback tag_">
+                  Password is required
+
+                </div>
+              </div>
+              <div class="input-box">
+                <i class="bi bi-person-fill"></i>
+                <input type="text" placeholder="Enter your user name" required class="form-control" id="f_username"
+                  name="f_username" formControlName="f_username"
+                  [ngClass]="{ 'is-invalid': submitted && f1.f_username.errors }">
+                <div *ngIf="submitted && f1.f_username.errors" class="invalid-feedback tag_">
+                  Please provide user Name.
+                </div>
+              </div>
+              <div class="input-box">
+                <i class="bi bi-person-fill"></i>
+                <input type="text" placeholder="Enter your address" required class="form-control" id="f_add"
+                  name="f_add" formControlName="f_add" [ngClass]="{ 'is-invalid': submitted && f1.f_add.errors }">
+                <div *ngIf="submitted && f1.f_add.errors" class="invalid-feedback tag_">
+                  Please provide Address.
+                </div>
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Submit">
+              </div>
+              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+ 

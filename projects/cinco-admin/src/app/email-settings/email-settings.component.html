@@ -1,0 +1,101 @@
+<p>email-settings works!</p>
+<div class="page-wrapper"><div class="card accordion-body" style="width: 850px ; text-align: center; margin-left: 100px;">
+    <div class="content mt-5">
+    <div class="row">
+    <div class="col-lg-12">
+    <form [formGroup]="emailSettingsForm" (ngSubmit)="saveEmailSettings()">
+    <div class="form-group">
+    <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="mailoption" id="phpmail" value="option1">
+    <label class="form-check-label" for="phpmail">PHP Mail</label>
+    </div>
+    <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="mailoption" id="smtpmail" value="option2">
+    <label class="form-check-label" for="smtpmail">SMTP</label>
+    </div>
+    </div>
+    <h4>PHP Email Settings</h4>
+    <div class="row">
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Email From Address</label>
+    <input class="form-control" type="email" id="address" name="address" formControlName="address" 
+    [ngClass]="{'is-invalid' :submitted && f.address.errors}">
+    <div *ngIf="submitted &&  f.address.errors" class="invalid-feedback ">Please Enter From Address.</div>
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>Emails From Name</label>
+    <input class="form-control" type="text" id="name" name="name" formControlName="name" 
+    [ngClass]="{'is-invalid' :submitted && f.name.errors}">
+    <div *ngIf="submitted &&  f.name.errors" class="invalid-feedback ">Please Enter From Name.</div>
+    </div>
+    </div>
+    </div>
+    <h4 class="m-t-30">SMTP Email Settings</h4>
+    <div class="row">
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>SMTP Host</label>
+    <input class="form-control" type="text" id="host" name="host" formControlName="host" 
+    [ngClass]="{'is-invalid' :submitted && f.host.errors}">
+    <div *ngIf="submitted &&  f.host.errors" class="invalid-feedback ">Please Enter Email Host.</div>
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>SMTP User</label>
+    <input class="form-control" type="text" id="user" name="user" formControlName="user" 
+    [ngClass]="{'is-invalid' :submitted && f.user.errors}">
+    <div *ngIf="submitted &&  f.user.errors" class="invalid-feedback ">Please Enter User.</div>
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>SMTP Password</label>
+    <input class="form-control" type="password" id="password" name="password" formControlName="password" 
+    [ngClass]="{'is-invalid' :submitted && f.password.errors}">
+    <div *ngIf="submitted &&  f.password.errors" class="invalid-feedback ">Please Enter Password.</div>
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>SMTP Port</label>
+    <input class="form-control" type="text" id="port" name="port" formControlName="port" 
+    [ngClass]="{'is-invalid' :submitted && f.port.errors}">
+    <div *ngIf="submitted &&  f.port.errors" class="invalid-feedback ">Please Enter Port Number.</div>
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>SMTP Security</label>
+    <select class="form-control form-control-lg" id="security" name="security" formControlName="security" 
+    [ngClass]="{'is-invalid' :submitted && f.security.errors}">
+    
+    <!-- <option>Select</option> -->
+    <option>None</option>
+    <option>SSL</option>
+    <option>TLS</option>
+    </select>
+    <div *ngIf="submitted &&  f.security.errors" class="invalid-feedback ">Please Enter BookingId.</div>
+    </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="form-group">
+    <label>SMTP Authentication Domain</label>
+    <input class="form-control form-control-lg" type="text" id="auth" name="auth" formControlName="auth" 
+    [ngClass]="{'is-invalid' :submitted && f.auth.errors}">
+    <div *ngIf="submitted &&  f.auth.errors" class="invalid-feedback">Please Enter Authentication.</div>
+    </div>
+    </div>
+    </div>
+    <div class="col-sm-12 m-t-20 text-center">
+    <button type="submit" class="btn btn-primary submit-btn">Save</button>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div></div>
+    

@@ -1,0 +1,65 @@
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <div class="mt-5">
+                        <h4 class="card-title float-left mt-2">Inventory </h4>
+                        <a class="btn btn-primary float-right veiwbutton" routerLink="/add-customer">Add Customers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <!-- <div class="filter col-md-3">
+              <input type="text" placeholder="Filter" class="form-control" #filterInput (input)="filterBranch(filterInput.value)">
+            </div> -->
+
+            <div class="filter col-md-3">
+                <input type="text" placeholder="Filter" class="form-control" [(ngModel)]="filterText" (input)="filterBranches()">
+              </div>
+            
+          </div>
+
+
+
+
+
+        <div class="wrapper">
+            <!-- <div *ngFor="let room of Branches;let i = index"  [ngClass]="[
+            room.status === 'occupied' ? 'class1' : '',
+            room.status === 'booked' ? 'class2' : '',
+            room.status ===  'vacant'  ? 'class3'  : '']"> 
+                <p > Room No: {{room.room_code}}</p>  
+                <p> {{room.status}}</p> 
+                <p (click)="sortTable" > {{room.guest_name}}</p> 
+                <p (click)="sortTable" >{{room.phone_no}}</p> 
+                <p >check-in &nbsp;&nbsp;&nbsp; check-out</p>
+                <p>{{room.check_in_date}}&nbsp; {{room.check_out_date}}</p>             
+
+
+            </div> -->
+            <ng-container *ngFor="let branch of filteredBranches">
+                <div *ngFor="let room of branch.room_no" [ngClass]="[
+                  room.status === 'occupied' ? 'class1' : '',
+                  room.status === 'booked' ? 'class2' : '',
+                  room.status === 'vacant' ? 'class3' : ''
+                ]">
+                  <p>Room No: {{room.room_code}}</p>
+                  <p>{{room.status}}</p>
+                  <p (click)="sortTable">{{room.guest_name}}</p>
+                  <p (click)="sortTable">{{room.phone_no}}</p>
+                  <p>check-in &nbsp;&nbsp;&nbsp; check-out</p>
+                  <p>{{room.check_in_date}} &nbsp; {{room.check_out_date}}</p>
+                </div>
+              </ng-container>
+           
+
+
+
+
+        </div>
+    </div>
+    

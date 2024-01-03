@@ -1,0 +1,36 @@
+.formtype {
+    padding: 5px;
+}.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}.col-md-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+
+.btn-primary{
+    color:#ffff;
+    background-color: #FEA116;
+    border-color: #FEA116;
+}
+
+.row {
+    margin-left: 0px;
+}
+
+::ng-deep .theme-green .bs-datepicker-body table td.week span {
+    color: #fea116;
+}
+
+::ng-deep .theme-green .bs-datepicker-head {
+ background-color: #fea116;
+}
+::ng-deep .theme-green .bs-datepicker-body table td span.selected{
+  background-color: #fea116;
+}

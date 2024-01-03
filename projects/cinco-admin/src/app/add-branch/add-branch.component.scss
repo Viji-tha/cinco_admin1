@@ -1,0 +1,67 @@
+.formtype {
+    padding: 5px;
+}
+.page-wrapper1{
+    width: 100%;
+    margin-left: 170px;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-md-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+.btn {
+    padding: 16px, 62px;
+    width: 200px;
+    border-radius: 22px;
+}
+
+.btn2 {
+    padding: 16px, 62px;
+    width: 100px;
+    border-radius: 22px;
+    background-color: #FEA116;
+    border-color: #FEA116;
+}
+
+.btn1 {
+    padding: 16px, 62px;
+    width: 50px;
+    border-radius: 22px;
+}
+
+.btn-primary {
+    color: black;
+    background-color: #FEA116;
+    border-color: #FEA116;
+    padding: 16px, 62px;
+    width: 200px;
+    height: 45px;
+    border-radius: 22px;
+}
+
+.row {
+    margin-left: 0px;
+}
+
+::ng-deep .theme-green .bs-datepicker-body table td.week span {
+    color: #fea116;
+}
+
+::ng-deep .theme-green .bs-datepicker-head {
+    background-color: #fea116;
+}
+
+::ng-deep .theme-green .bs-datepicker-body table td span.selected {
+    background-color: #fea116;
+}

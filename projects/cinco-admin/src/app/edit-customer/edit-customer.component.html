@@ -1,0 +1,214 @@
+
+    <div class="page-wrapper"><div class="card accordion-body" style="width: 850px ; text-align: center; margin-left: 100px;">
+        <div class="content container-fluid">
+        <div class="page-header">
+        <div class="row align-items-center">
+        <div class="col">
+        <h3 class="page-title mt-5">Edit Customer</h3>
+        </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-lg-12">
+        <form   [formGroup]="editCustomerForm" (ngSubmit)="saveEditCustomer()">
+        <div class="row formtype">
+        <div class="col-md-4">
+        <div class="form-group">
+        <label>Booking ID</label>
+        <input class="form-control" type="text" value="BKG-0001" autocomplete="off" id="bookingid" name="bookingid" formControlName="bookingid" 
+                                [ngClass]="{'is-invalid' :submitted && f.bookingid.errors}">
+         <div *ngIf="submitted &&  f.bookingid.errors" class="invalid-feedback ">Please provide Booking Id</div>
+                                  
+       
+        
+    </div>
+        </div>
+        <div class="col-md-4">
+        <div class="form-group">
+        <label>Name</label>
+        <select class="form-control form-control-lg" id="name" name="name" formControlName="name"
+        [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+        <option>Kennadey</option>
+        <option>Jennifer Robinson</option>
+        <option>Terry Baker</option>
+        </select>
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback ">
+            Please select Name.
+         </div>
+        </div>
+
+        
+
+   
+            
+        </div>
+        <div class="col-md-4">
+        <div class="form-group">
+        <label>Room Type</label>
+        <select class="form-control form-control-lg" id="roomtype" name="roomtype" formControlName="roomtype"
+        [ngClass]="{'is-invalid' : submitted && f.roomtype.errors}">
+        <option>Single</option>
+        <option>Double</option>
+        <option>Quad</option>
+        <option>King</option>
+        <option>Suite</option>
+        <option>Villa</option>
+        </select>
+        <div *ngIf="submitted && f.roomtype.errors" class="invalid-feedback">Plaese select Room Type</div>
+        </div>
+        </div>
+        <div class="col-md-4">
+        <div class="form-group">
+        <label>Total Members</label>
+        <select class="form-control form-control-lg" id="members" name="members" formControlName="members"
+        [ngClass]="{'is-invalid' : submitted && f.members.errors}">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        </select>
+        <div *ngIf="submitted && f.members.errors" class="invalid-feedback">Plaese select Total Members</div>
+        </div>
+        </div>
+        <div class="col-md-4">
+         <div class="form-group">
+        <label>Date</label>
+        <input type="text" class="form-control datetimepicker" bsDatepicker [minDate]="minDate" [bsConfig]="{isAnimated:true}" autocomplete="off"  placeholder="date" id="date" name="date" formControlName="date" 
+                
+        [ngClass]="{'is-invalid' : submitted && f.date.errors}" >
+        <div *ngIf="submitted && f.date.errors" class="invalid-feedback">Plaese select Date</div>
+        </div>
+        </div>
+        <div class="col-md-4">
+        <div class="form-group">
+        <label>Booking Time</label>
+        
+          <!-- <timepicker [hoursPlaceholder]="hoursPlaceholder"
+            [minutesPlaceholder]="minutesPlaceholder"
+            [showMinutes]="true"></timepicker> -->
+         
+        <!-- <input type="text" class="form-control timepicker"   autocomplete="off" id="time" name="time" formControlName="time" 
+        [ngClass]="{'is-invalid' : submitted && f.time.errors}"> -->
+        
+
+        <!-- <time-picker [(ngModel)] [meridians]="meridians">"MyTime"</time-picker>
+        <pre class="alert alert-info">Time is: {{mytime}}</pre> -->
+        <!-- <div *ngIf="submitted && f.time.errors" class="invalid-feedback">Plaese select time</div> -->
+      
+                                   
+          <div class="row">
+            <select class="col-md-6" [(ngModel)]="selectedHour" id="hours" name="hours" formControlName="hours"
+            [ngClass]="{ 'is-invalid': submitted && f.hours.errors }">
+              <option *ngFor="let hour of hours" [value]="hour">{{ hour }}</option>
+            </select>
+            <div *ngIf="submitted && f.hours.errors" class="invalid-feedback">Plaese select hours.</div>
+            <span>:</span>
+            <select class="col-md-5" [(ngModel)]="selectedMinute" id="minutes" name="minutes" formControlName="minutes"
+            [ngClass]="{ 'is-invalid': submitted && f.minutes.errors }">
+              <option *ngFor="let minute of minutes" [value]="minute">{{ minute }}</option>
+            </select>
+           
+            <div *ngIf="submitted && f.minutes.errors" class="invalid-feedback">Plaese select minutes.</div>
+            <!-- <select class="col-md-3" [(ngModel)]="selectedPeriod">
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
+            </select> -->
+          </div>
+          <!-- <p> {{ formatTime(selectedHour, selectedMinute, selectedPeriod) }}</p> -->
+    
+          <!-- <timepicker [(ngModel)]="time"></timepicker> -->
+         
+          <!-- <pre class="alert alert-info">Time is: {{time}}</pre> -->
+
+
+
+       
+        </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+          <span ><b>Check-in</b></span>&nbsp;&nbsp;&nbsp;&nbsp;<span><b>Check-out</b></span>
+
+
+    
+<input type="text"  class="form-control datetimepicker"   autocomplete="off"   bsDaterangepicker [(ngModel)]="bsRangeValue"  [minDate]="minDate" 
+  [bsConfig]="{ isAnimated: true }"  id="date1" name="date1" formControlName="date1"
+  placeholder="date"
+  [ngClass]="{'is-invalid' : submitted && f.date1.errors}" >
+  <div *ngIf="submitted && f.date1.errors" class="invalid-feedback"> Plaese select Date. </div>
+        </div>
+
+      </div>
+
+        <!-- <div class="col-md-4">
+        <div class="form-group">
+        <label>Check-In Date</label>
+        <div class="cal-icon" >
+        <input type="text" class="form-control datetimepicker" bsDatepicker [minDate]="minDate" [bsConfig]="{isAnimated:true}" autocomplete="off" id="checkindate" name="checkindate" formControlName="checkindate"
+          placeholder="checkindate" 
+        [ngClass]="{'is-invalid' : submitted && f.checkindate.errors}" >
+        <div *ngIf="submitted && f.checkindate.errors" class="invalid-feedback">Plaese select CheckInDate</div>
+        </div>
+        </div>
+        </div> -->
+        <!-- <div class="col-md-4">
+        <div class="form-group">
+        <label>Check-Out Date</label>
+        <div class="cal-icon" >
+        <input type="text" class="form-control"  bsDatepicker [minDate]="minDate" [bsConfig]="{isAnimated:true}" autocomplete="off" id="checkoutdate" name="checkoutdate" formControlName="checkoutdate"
+        placeholder="checkoutdate"
+        [ngClass]="{'is-invalid' : submitted && f.checkoutdate.errors}" >
+        <div *ngIf="submitted && f.checkoutdate.errors" class="invalid-feedback">Plaese select checkOut Date</div>
+        </div>
+        </div>
+        </div> -->
+        <div class="col-md-4">
+          <div class="form-group">
+              <label>Email ID</label>
+              <input type="text" class="form-control" id="email" name="email" formControlName="email" 
+              [ngClass]="{'is-invalid' :submitted && f.email.errors}">
+              <div *ngIf="submitted &&  f.email.errors" class="invalid-feedback">Please provide Email Id</div> </div>
+      </div>
+        <div class="col-md-4">
+          <div class="form-group">
+              <label>Phone Number</label>
+              <input type="text" class="form-control" autocomplete="off" id="phonenumber" name="phonenumber" formControlName="phonenumber" 
+              [ngClass]="{'is-invalid' :submitted && f.phonenumber.errors}">
+              <div *ngIf="submitted &&  f.phonenumber.errors" class="invalid-feedback">Please Enter PhoneNUmber.</div> </div>
+      </div>                        
+        
+        <div class="col-md-4">
+        <div class="form-group">
+        <label>File Upload</label>
+        <div class="custom-file mb-3">
+        <input type="file" class="custom-file-input" id="file" name="file" formControlName="file"
+        [ngClass]="{'is-invalid' : submitted && f.file.errors}">
+        <label class="custom-file-label" for="file">Choose file</label>
+        <div *ngIf="(submitted || f.file.touched) && f.file.errors?.required" class="invalid-feedback">
+          Please Select Your FIle
+            
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="col-md-4">
+        <div class="form-group">
+        <label>Message</label>
+        <textarea class="form-control" rows="5" id="text" name="text" formControlName="text"
+        [ngClass]="{'is-invalid' : submitted && f.text.errors}"></textarea>
+        <div *ngIf="(submitted || f.text.touched) && f.text.errors?.required" class="invalid-feedback">
+          Please enter your comments here.
+            
+        </div>
+        </div>
+        </div>
+        </div>
+        <button type="submit" class="btn btn-primary buttonedit">Save</button>
+        </form>
+        </div>
+        </div>
+        
+        </div></div>
+        </div>

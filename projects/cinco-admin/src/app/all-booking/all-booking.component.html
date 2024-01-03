@@ -1,0 +1,91 @@
+<div class="page-wrapper">
+    <div class="content container-fluid px-0">
+      <div class="page-header">
+        <div class="row align-items-center">
+          <div class="col">
+            <div class="mt-5">
+              <h4 class="card-title float-left ml-3 mt-2">All Bookings</h4> <a class="btn btn-primary float-right veiwbutton"
+                routerLink="/add-booking">Add Bookings</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- <div class="container"> -->
+      <div class="card py-md-2">
+        <div class="row">
+          <div class="col-md-3">
+            <input type="text" placeholder="Filter" class="form-control" #filterInput
+              (input)="filterTable(filterInput.value)">
+          </div>
+  
+        </div>
+  
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <!-- <th (click)="sortTable('user_id')">User Id</th> -->
+  
+              <th (click)="sortTable('booking_date')">Booking Date</th>
+              <th (click)="sortTable('booked_by')">Booked By</th>
+              <th (click)="sortTable('check_in')">CheckinDate</th>
+  
+              <th (click)="sortTable('no_of_days')">TotalBookingDays</th>
+              <th  (click)="sortTable('check_out')">CheckOut Date</th>
+              <!-- <th  (click)="sortTable('payment_method')">PaymentMethod</th> -->
+              <th  (click)="sortTable('booking_status')">Status</th>
+              <th  (click)="sortTable('room_type')">RoomType</th>
+              <th  (click)="sortTable('no_of_people')">No Of People</th>
+              <th  (click)="sortTable('no_of_rooms')">No Of Rooms</th> 
+              <th  (click)="sortTable('actions')">Actions</th>       
+  
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of booking ">
+              <!-- <td>{{ row.user_id }}</td> -->
+  
+  
+              <td>{{ row.booking_date }}</td>
+              <td>{{ row.booked_by }}</td>
+              <td>{{ row.check_in }}</td>
+
+              <td>{{ row.no_of_days }}</td>
+              <td>{{ row.check_out }}</td>
+              <!-- <td>{{ row.payment_method }}</td> -->
+              <td>{{ row.booking_status }}</td>
+              <td>{{ row.room_type }}</td>
+              <td>{{ row.no_of_people }}</td>
+              <td>{{ row.no_of_rooms }}</td>
+              <td><div class="d-flex"> <i class="fa fa-pencil-square-o" aria-hidden="true" [routerLink]="['/edit-booking',row._id]"><button class="btn " type="button" data-toggle="tooltip"
+                title="Edit"></button></i>
+                <i class="fa fa-trash" aria-hidden="true">
+            <button class="btn " type="button" data-toggle="tooltip"
+               title="Delete"></button></i>
+              </div>
+            </td>
+  
+              
+  
+            </tr>
+          </tbody>
+        </table>
+  
+        <div class="row"  >
+          <div class="col-md-12" style="text-align-last: right;">
+            <div class="pagination">
+              <button class="btn1 btn-link" [disabled]="currentPage === 1"
+                (click)="setPage(currentPage - 1)">&laquo;</button>
+              <span>{{ currentPage }}</span>
+              <button class="btn1 btn-link" [disabled]="currentPage === getTotalPages()"
+                (click)="setPage(currentPage + 1)">&raquo;</button>
+
+
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->

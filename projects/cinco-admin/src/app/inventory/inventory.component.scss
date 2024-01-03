@@ -1,0 +1,65 @@
+.btn-primary {
+  color: #fff;
+  background-color: #fea116;
+  border-color:#fea116;
+}
+
+
+// grid css-----
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  border: 2px solid #f76707;
+  border-radius: 5px;
+
+  
+}
+
+.wrapper > div {
+  border: 2px solid #ffa94d;
+  border-radius: 5px;
+
+  padding: 1em;
+  margin: 2px;
+
+}
+
+.filter{
+  padding-bottom: 25px;
+}
+p {
+  margin: 0 0 2px;
+}
+
+
+
+  /* Green color for 'occupied' */
+.class1 {
+    background-color: green;
+    color: white;
+  }
+  
+  /* Yellow color for 'reserved' */
+  .class2 {
+    background-color: #d49137;
+    color: black;
+  }
+  
+  /* Red color for the condition (something && (status === 'occupied' || status === 'reserved')) */
+  .class3 {
+    background-color: red;
+    color: white;
+  }
+
+
+
+
+ 

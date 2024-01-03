@@ -1,0 +1,297 @@
+<div class="page-wrapper">
+    <div class="content mt-5">
+        <div class="row mt-3">
+            <div class="col-sm-8">
+                <h4 class="page-title">Roles & Permissions</h4>
+            </div>
+        </div>
+
+        <div class="row ">
+
+            <div class="col-sm-4 col-md-4 col-lg-4 col-xl-3 roles_class">
+                <a href="add-role.html" class="btn btn-primary btn-block" routerLink="/add-role"><i
+                        class="fas fa-plus"></i> Add Roles</a>
+                        <hr> 
+                <div class="roles-menu">
+                    <ul class="roles-menu-ul">
+                        <li class="active">
+                            <a href="javascript:void(0);">SuperAdmin</a>
+                        </li>
+                        <li><a href="">Admin/Dash-Board</a></li>
+                        <li><a href="">BranchManager</a></li>
+                        <li><a href="">Employee</a></li>
+                        <li><a href="">Staff</a></li>
+                        <li><a href="">Accountant</a></li>
+                        <li><a href="">Receptionist</a></li>
+                    </ul>
+                </div>
+            </div>
+               
+            <div class="col-sm-8 col-md-8 col-lg-8 col-xl-9 roles_class">
+                <h6 class="card-title mt-5 pt-5">Module Access</h6>
+                <div class="m-b-30">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            SuperAdmin
+                            <div class="material-switch float-right">
+                                <input id="staff_module" type="checkbox">
+                                <label for="staff_module" class="badge-success"></label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            BranchAdmin
+                            <div class="material-switch float-right">
+                                <input id="holidays_module" type="checkbox">
+                                <label for="holidays_module" class="badge-success"></label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            Role Management
+                            <div class="material-switch float-right">
+                                <input id="leave_module" type="checkbox">
+                                <label for="leave_module" class="badge-success"></label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            Employee
+                            <div class="material-switch float-right">
+                                <input id="events_module" type="checkbox">
+                                <label for="events_module" class="badge-success"></label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            Branches
+                            <div class="material-switch float-right">
+                                <input id="chat_module" type="checkbox">
+                                <label for="chat_module" class="badge-success"></label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            Rooms
+                            <div class="material-switch float-right">
+                                <input id="chat_module" type="checkbox">
+                                <label for="chat_module" class="badge-success"></label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            Customers
+                            <div class="material-switch float-right">
+                                <input id="chat_module" type="checkbox">
+                                <label for="chat_module" class="badge-success"></label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            Bookings
+                            <div class="material-switch float-right">
+                                <input id="chat_module" type="checkbox">
+                                <label for="chat_module" class="badge-success"></label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            Payments
+                            <div class="material-switch float-right">
+                                <input id="chat_module" type="checkbox">
+                                <label for="chat_module" class="badge-success"></label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            Testimonials
+                            <div class="material-switch float-right">
+                                <input id="chat_module" type="checkbox">
+                                <label for="chat_module" class="badge-success"></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div class="table-responsive">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <tr>
+                                <th>Module Permission</th>
+                                <th class="text-center">Add</th>
+                                <th class="text-center">Edit</th>
+                                <th class="text-center">Update</th>
+                                <th class="text-center">Delete</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SuperAdmin</td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>BranchAdmin</td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>BranchManager</td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>Employee</td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>Branches</td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>Rooms</td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>Customers</td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>Bookings</td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>Payments</td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>Testimonials</td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+                                <td class="text-center">
+                                    <input type="checkbox" checked="">
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+<div id="delete_role" class="modal fade delete-modal" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <h3>Are you sure want to delete this Role?</h3>
+                <div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

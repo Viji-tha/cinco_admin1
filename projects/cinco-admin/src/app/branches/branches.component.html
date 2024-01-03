@@ -1,0 +1,105 @@
+<div class="page-wrapper">
+  <div class="content container-fluid px-0">
+    <div class="page-header">
+      <div class="row align-items-center">
+        <div class="col">
+          <div class="mt-5">
+            <h4 class="card-title float-left ml-3 mt-2">Branches</h4> <a class="btn btn-primary float-right veiwbutton"
+              routerLink="/add-branch">Add Branches</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="container"> -->
+    <div class="card py-md-2">
+      <div class="row">
+        <div class="col-md-3">
+          <input type="text" placeholder="Filter" class="form-control" #filterInput
+            (input)="filterTable(filterInput.value)">
+        </div>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <!-- const body = {
+            branch_code:this.addBranchForm.get("branch_code").value,
+            name: this.addBranchForm.get("name").value,
+            logo: this.addBranchForm.get("logo").value,
+            location: this.addBranchForm.get("location").value,
+            room_info: roomInfoArray,
+            type: roomFormGroup.room_type,
+      sharing: roomFormGroup.sharing,
+      price:(roomFormGroup.price),
+            total_rooms: roomInfoArray.length,
+            available_rooms:this.addBranchForm.get("available_rooms").value,
+            is_active: true,
+        is_archive: false,
+            created_by :"657d88f401badf66646f42d9", // Replace with the actual user role ID
+        updated_by: "657d88f401badf66646f42d9" 
+          }; -->
+      
+          <tr>
+            <th (click)="sortTable('branch_code')">BranchId</th>
+            <th (click)="sortTable('name')">Name</th>
+            <th (click)="sortTable('location')">Location</th>
+            <!-- <th (click)="sortTable('created_date')">Created_date</th> -->
+            
+
+            <th (click)="sortTable('room_type')">Room_type</th>
+            <th (click)="sortTable('sharing')">Sharing</th>
+            <th (click)="sortTable('price')">Price</th>
+            <th (click)="sortTable('total_rooms')">TotalRooms</th>
+            <th (click)="sortTable('available_rooms')">Available Rooms</th>
+           
+            <th>Actions</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of branch">
+            <td>{{ row.branch_code }}</td>
+            <td>{{ row.name }}</td>
+            <td>{{ row.location }}</td>
+            <!-- <td>{{row.created_date }}</td> -->
+            <!-- <td>{{ row.updated_date }}</td> -->
+            <td>{{ row.room_info[0].type }}</td>
+
+            <td>{{ row.room_info[0].sharing }}</td>
+
+            <td>{{ row.room_info[0].price }}</td>
+            <td>{{ row.total_rooms }}</td>
+            <td>{{ row.room_info[0].available_rooms }}</td>
+            <!-- <td>{{ row.updated_person_id }}</td> -->
+            <td>
+              <!-- <i class="fa fa-pencil-square-o" aria-hidden="true"></i>     &nbsp;&nbsp;
+              <i class="fa fa-trash"
+                aria-hidden="true"></i> -->
+
+                 <button class="btn btn-sm " type="button" data-toggle="tooltip"
+                                                data-placement="top" title="Edit"><i
+                                                class="fa fa-pencil-square-o" aria-hidden="true" [routerLink]="['/edit-branch',row._id]"></i></button>
+                                                <button class="btn  btn-sm " type="button" data-toggle="tooltip"
+                                                data-placement="top" title="Delete" (click)="delete_branch_details(row._id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+              <!-- <button class="btn  btn-sm " type="button" data-toggle="tooltip"
+                            data-placement="top" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+
+
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="row">
+        <div class="col-md-12" style="text-align-last: right;">
+          <div class="pagination">
+            <button class="btn btn-link" [disabled]="currentPage === 1" (click)="setPage(currentPage - 1)"><span
+                aria-hidden="true">&laquo;</span></button>
+            <span>{{ currentPage }}</span>
+            <button class="btn btn-link" [disabled]="currentPage === getTotalPages()"
+              (click)="setPage(currentPage + 1)"><span aria-hidden="true">&raquo;</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+     

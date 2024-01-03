@@ -1,0 +1,101 @@
+<div class="page-wrapper">
+    <div class="card accordion-body"  >
+        <div class="content container-fluid">
+            <div class="page-header">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h3 class="page-title mt-5">Add Room</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form [formGroup]="addRoomsForm" (ngSubmit)="saveAddRooms()">
+                        <div class="row formtype">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Room Number</label>
+
+                                    <input class="form-control" type="text" id="room_no" name="room_no"
+                                        formControlName="room_no"
+                                        [ngClass]="{'is-invalid' :submitted && f.room_no.errors}">
+                                    <div *ngIf="submitted &&  f.room_no.errors" class="invalid-feedback ">Please
+                                        Enter BookingId.</div>
+                                </div>
+                            </div>
+                          
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>BranchId</label>
+
+                                    <input class="form-control" type="text" id="branch_id" name="branch_id"
+                                        formControlName="branch_id"
+                                        [ngClass]="{'is-invalid' :submitted && f.branch_id.errors}">
+                                    <div *ngIf="submitted &&  f.branch_id.errors" class="invalid-feedback ">Please
+                                        Enter BookingId.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Room Type</label>
+                                   
+                                    <input class="form-control" type="text" id="room_type_id" name="room_type_id"
+                                        formControlName="room_type_id"
+                                        [ngClass]="{'is-invalid' :submitted && f.room_type_id?.errors}">
+                                    
+                                    <div *ngIf="submitted && f.room_type_id.errors" class="invalid-feedback">Plaese select
+                                        Room Type</div>
+                                </div>
+                            </div>
+                           
+                            <!-- <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>CheckIn Date</label>
+                                    <input type="Number " autocomplete="off" bsDatepicker [bsConfig]="{isAnimated:true}"
+                                        class="form-control datetimepicker" id="check_in" name="check_in" formControlName="check_in"
+                                        placeholder="check_in" [ngClass]="{'is-invalid' : submitted && f.check_in.errors}">
+                                    <div *ngIf="submitted && f.check_in.errors" class="invalid-feedback"> Plaese select
+                                       CheckIn Date. </div>
+                                </div>
+                            </div> -->
+                            <!-- <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Checkout Date</label>
+                                    <input type="Number " autocomplete="off" bsDatepicker [bsConfig]="{isAnimated:true}"
+                                        class="form-control datetimepicker" id="check_out" name="check_out" formControlName="check_out"
+                                        placeholder="check_out" [ngClass]="{'is-invalid' : submitted && f.check_out.errors}">
+                                    <div *ngIf="submitted && f.check_out.errors" class="invalid-feedback"> Plaese select
+                                       CheckOut Date. </div>
+                                </div>
+                            </div> -->
+                            
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Status</label>
+                                    <select class="form-control form-control-lg" id="charges" name="charges"
+                                        formControlName="charges"
+                                        [ngClass]="{'is-invalid' : submitted && f.charges?.errors}">
+                                        <!-- <option>Select</option> -->
+                                        <option>Available</option>
+                                        <option>Occupied</option>
+                                        <option>Reserved</option>
+                                    </select>
+                                  
+                                    <div *ngIf="submitted && f.charges?.errors" class="invalid-feedback">Plaese choose
+                                        status</div>
+                                </div>
+                            </div>
+                            
+                           
+                           
+                            
+                        </div>
+                        <button type="submit" class="btn btn-primary buttonedit ml-2 mb-5">Save</button>
+                       
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

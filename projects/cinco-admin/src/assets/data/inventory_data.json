@@ -1,0 +1,120 @@
+   [
+     
+      {
+        "branch_name": "banjarahills",
+        "room_no": [
+          {
+             
+             
+            "room_id":"101",
+            "room_code":111,
+            "status": "occupied",
+            "guest_name": "Kennedey",
+            "phone_no": "2222222222",
+            "check_in_date": "23/06/2023",
+            "check_out_date": "29/06/2023"
+          },
+          {
+            
+            "room_id":"102",
+            "room_code":112,
+            "status": "booked",
+            "guest_name": "Allen",
+            "phone_no": "3333333333",
+            "check_in_date": "23/06/2023",
+            "check_out_date": "29/06/2023"
+          },
+          { 
+           
+            "room_id":"103",
+            "room_code":113,
+            "status": "vacant",
+            "guest_name": "Disouje",
+            "phone_no": "4444444444",
+            "check_in_date": "23/06/2023",
+            "check_out_date": "29/06/2023"
+          },
+          {
+            
+            "room_id":"104",
+            "room_code":114,
+            "status": "occupied",
+            "guest_name": "Dinesh",
+            "phone_no": "5555555555",
+            "check_in_date": "23/06/2023",
+            "check_out_date": "29/06/2023"
+          },
+          { 
+            
+            "room_id":"105",
+            "room_code":115,
+            "status": "booked",
+            "guest_name": "Daniel",
+            "phone_no": "6666666666",
+            "check_in_date": "23/06/2023",
+            "check_out_date": "29/06/2023"
+          },
+          {
+            
+            "room_id":"106",
+            "room_code":116,
+            "status": "vacant"
+          
+          },{
+             
+             
+            "room_id":"107",
+            "room_code":111,
+            "status": "vacant"
+          },
+          {
+            
+            "room_id":"108",
+            "room_code":112,
+            "status": "occupied",
+            "guest_name": "Albert",
+            "phone_no": "6666666666",
+            "check_in_date": "23/06/2023",
+            "check_out_date": "29/06/2023"
+          },
+          { 
+           
+            "room_id":"109",
+            "room_code":113,
+            "status": "booked",
+            "guest_name": "Anvesh",
+            "phone_no": "7777777777",
+            "check_in_date": "23/06/2023",
+            "check_out_date": "29/06/2023"
+          },
+          {
+            
+            "room_id":"110",
+            "room_code":114,
+            "status": "vacant"
+          },
+          { 
+            
+            "room_id":"111",
+            "room_code":115,
+            "status": "occupied",
+            "guest_name": "bjhdb",
+            "phone_no": "8888888888",
+            "check_in_date": "23/06/2023",
+            "check_out_date": "29/06/2023"
+          },
+          {
+            
+            "room_id":"112",
+            "room_code":116,
+            "status": "booked",
+            "guest_name": "Ankitha",
+            "phone_no": "9999999999",
+            "check_in_date": "23/06/2023",
+            "check_out_date": "29/06/2023"
+          }
+        ]
+      }
+      
+    ]
+  
